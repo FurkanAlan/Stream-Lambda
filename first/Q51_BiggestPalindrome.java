@@ -16,7 +16,7 @@ public class Q51_BiggestPalindrome {
 	public static PalindromeX<String, String[]> biggest=strArr->{
 		
 		return Arrays.stream(strArr)
-					  .filter(x->x.equalsIgnoreCase(new StringBuilder(x).reverse().toString()))
+					  .filter(x->x.equalsIgnoreCase(Stream.of(x.split("").reduce((x,y)->y+x))
 					  .max((x,y)->y.compareTo(x))
 					  .get();
 		    
